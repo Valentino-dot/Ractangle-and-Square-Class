@@ -1,31 +1,24 @@
-class Rectangle {
-    protected double length;
-    protected double width;
+import java.util.Date;
 
-    public Rectangle(double length, double width) {
-        this.length = length;
+public abstract class Rectangle {
+
+    Double width=20.0;
+    Double height= 200.0;
+
+    public Rectangle(Double width, Double height, Double p, Double l) {
         this.width = width;
+        this.height = height;
+        P = p;
+        L = l;
     }
 
-    public double getArea() {
-        return length * width;
+    Double P= 50.0;
+    Double L= 200.0;
+     public Double getArea() {
+        return width* height;
+    }
+    public Double getPerimeter(){
+         return (L+P)*2;
     }
 
-    public double getPerimeter() {
-        return 2 * (length + width);
-    }
-}
-
-class Square extends Rectangle {
-    public Square(double side) {
-        super(side, side);
-    }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        Square square = new Square(5);
-        System.out.println("Area of Square: " + square.getArea());
-        System.out.println("Perimeter of Square: " + square.getPerimeter());
-    }
 }
